@@ -201,7 +201,7 @@ router.post('/login',(req,res)=>{
   req.session.login=true
   req.session.user=userLogin
   if(req.session.login){
-    res.render('index',{products,userLogin,user:true});
+    res.redirect('/');
   }
   // res.redirect('/index')
      
@@ -228,7 +228,7 @@ res.redirect('/index')
 
 router.get('/logout',(req,res)=>{
   req.session.destroy()
-  res.render('user/login')
+  res.redirect('/')
 })
   
   
